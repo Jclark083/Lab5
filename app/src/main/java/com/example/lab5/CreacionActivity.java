@@ -13,7 +13,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.io.OutputStreamWriter;
-
+//RegisterActivity
 public class CreacionActivity extends AppCompatActivity {
 
     EditText txtnombrecrear, txtcedulacrear, txtcorreocrear, txtcontrasenacrear;
@@ -42,33 +42,28 @@ public class CreacionActivity extends AppCompatActivity {
             String cedula = txtcedulacrear.getText().toString();
             String correo = txtcorreocrear.getText().toString();
             String contrasena = txtcontrasenacrear.getText().toString();
-            /*sacar el texto del radiobutton seleccionado*/
-            int radioButtonId = tipologin.getCheckedRadioButtonId();
-            View radioButton = tipologin.findViewById(radioButtonId);
-            int indice = tipologin.indexOfChild(radioButton);
-            RadioButton rb = (RadioButton)tipologin.getChildAt(indice);
-            String Rol = rb.getText().toString();//texto
-            switch (radioButtonId){
+
+            switch (tipologin.getCheckedRadioButtonId()){
                 case R.id.rbAdmin:
-                    GuardarPorSharedPreferences(nombre, cedula, correo, contrasena,Rol);
+                    GuardarPorSharedPreferences(nombre, cedula, correo, contrasena,"Admnistrador");
                     break;
                 case R.id.rbRegis:
-                    GuardarPorSharedPreferences(nombre, cedula, correo, contrasena,Rol);
+                    GuardarPorSharedPreferences(nombre, cedula, correo, contrasena,"Registrador");
                     break;
                 case R.id.rbUser:
-                    GuardarPorSharedPreferences(nombre, cedula, correo, contrasena,Rol);
+                    GuardarPorSharedPreferences(nombre, cedula, correo, contrasena,"Usuario Normal");
+                    break;
                 default:
                     Toast.makeText(this, "Seleccione una opcion!!", Toast.LENGTH_SHORT).show();
                     break;
             }
-            Intent i = new Intent(this, ValidationActivity.class);
-            i.putExtra("nombre",nombre);
-            i.putExtra("cedula",cedula);
-            startActivity(i);
 
-            Intent in = new Intent(this, MainActivity.class);
-            in.putExtra("correo",correo);
-            in.putExtra("contrasena",contrasena);
+            /*Intent i = new Intent(this, ValidationActivity.class); //IMPRIME EN EL VALIDATION, cumple lo del LAB 5
+            i.putExtra("user",nombre);
+            i.putExtra("id",cedula);
+            startActivity(i);*/
+
+            Intent in = new Intent(this, MainActivity.class); //
             startActivity(in);
 
             Toast.makeText(this, "Usuario Creado Exitosamente", Toast.LENGTH_LONG).show();
@@ -90,11 +85,7 @@ public class CreacionActivity extends AppCompatActivity {
             editor.commit();
         }
         catch (Exception e){
-
+            Toast.makeText(this, "Errorsito hehe" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-
-
-
-
 }

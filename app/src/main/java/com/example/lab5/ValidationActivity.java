@@ -17,7 +17,7 @@ public class ValidationActivity extends AppCompatActivity {
 
         IniciarControles();
 
-        Intent i =getIntent();
+        Intent i = getIntent();
         if(i != null){
             PopularDatos(i);
         }
@@ -25,8 +25,8 @@ public class ValidationActivity extends AppCompatActivity {
     }
 
     private void PopularDatos(Intent i){
-        lblnombre.setText(i.getStringExtra("nombre"));
-        lblcedula.setText(i.getStringExtra("cedula"));
+        lblnombre.setText(i.getStringExtra("user"));
+        lblcedula.setText(i.getStringExtra("id"));
 
     }
 

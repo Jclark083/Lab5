@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
+//LoginActivity
 public class MainActivity extends AppCompatActivity {
     EditText usuario,password;
     RadioGroup tipologin;
@@ -58,27 +58,16 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Ingresar(View view){
         try {
-            SharedPreferences credenciales = getSharedPreferences("Credenciales",Context.MODE_PRIVATE);
-            String usuarioRegistrado = credenciales.getString("user","");
-            String passwordRegistrado = credenciales.getString("pass","");
-
             String user = usuario.getText().toString();
             String contra = password.getText().toString();
-            int radioButtonId = tipologin.getCheckedRadioButtonId();
-            View radioButton = tipologin.findViewById(radioButtonId);
-            int indice = tipologin.indexOfChild(radioButton);
-            RadioButton rb = (RadioButton)tipologin.getChildAt(indice);
-            String Rol = rb.getText().toString();//texto
+
+            SharedPreferences Login = getSharedPreferences("Login",Context.MODE_PRIVATE);
+            String usuarioRegistrado = Login.getString("correo",user);
+            String passwordRegistrado = Login.getString("contrasena",contra);
 
             if (user.equals(usuarioRegistrado) && contra.equals(passwordRegistrado)) {
-
-                int tipoLogin = tipologin.getCheckedRadioButtonId();
-                SharedPreferences login = getSharedPreferences("Login", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = login.edit();
-
-                switch (tipoLogin) {
+                switch (tipologin.getCheckedRadioButtonId()) {
                     case R.id.rbAdmin:
-
                         Intent iAdmin = new Intent(this, AdministradorActivity.class); //crear pantalla de Admin
                         startActivity(iAdmin);
                         break;
@@ -98,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             }catch (Exception e){
-            Toast.makeText(this,"Ups! Un error"+ e.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Ups! Un error "+ e.getMessage(),Toast.LENGTH_LONG).show();
         }
 
     }
