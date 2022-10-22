@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pantalla de Bienvenida "
+        android:textSize="28dp"
+        android:textAlignment="center"
+        android:id="@+id/lbltitulo"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:src="@drawable/utplogo"
+        android:layout_below = "@+id/lbltitulo"
+        android:id="@+id/pngutplogo"
+        android:layout_toRightOf="@+id/pngandroid"
+        android:layout_marginLeft="20dp"/>
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:src="@drawable/android"
+        android:layout_below = "@+id/lbltitulo"
+        android:id="@+id/pngandroid"
+        android:layout_toRightOf="@+id/pngutpfisc"
+        android:layout_marginLeft="30dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:src="@drawable/utpfisc"
+        android:layout_below = "@+id/lbltitulo"
+        android:id="@+id/pngutpfisc"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Datos del Usuario "
+        android:textSize="32dp"
+        android:layout_below="@+id/pngutpfisc"
+        android:id="@+id/lbldescripcion"
+        />
+
+    <TextView
+        android:id="@+id/nombreEstudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbldescripcion"
+        android:layout_marginTop="10dp"
+        android:text="Nombre del Estudiante"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/lblnombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombreEstudiante"
+        android:text="!"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cedula"
+        android:layout_below="@+id/lblnombre"
+        android:textSize="25dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/cedula"
+        />
+
+    <TextView
+        android:id="@+id/lblcedula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cedula"
+        android:text="!"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Grupo"
+        android:layout_below="@+id/lblcedula"
+        android:textSize="25dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/Grupo"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1IL-141"
+        android:textSize="20dp"
+        android:id="@+id/lblgrupo"
+        android:layout_below="@+id/Grupo"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Laboratorio #5"
+        android:textSize="25dp"
+        android:id="@+id/lab"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/lblgrupo"
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pantalla de Creacion "
+        android:textSize="28dp"
+        android:textAlignment="center"
+        android:id="@+id/lbltitulo"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/utplogo"
+        android:layout_below = "@+id/lbltitulo"
+        android:id="@+id/pngutplogo"
+        android:layout_toRightOf="@+id/pngandroid"
+        android:layout_marginLeft="20dp"/>
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:src="@drawable/android"
+        android:layout_below = "@+id/lbltitulo"
+        android:id="@+id/pngandroid"
+        android:layout_toRightOf="@+id/pngutpfisc"
+        android:layout_marginLeft="10dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:src="@drawable/utpfisc"
+        android:layout_below = "@+id/lbltitulo"
+        android:id="@+id/pngutpfisc"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Creacion de Usuario "
+        android:textSize="32dp"
+        android:layout_below="@+id/pngutpfisc"
+        android:id="@+id/lbldescripcion"
+        />
+
+    <TextView
+        android:id="@+id/nombreEstudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbldescripcion"
+        android:layout_marginTop="10dp"
+        android:text="Nombre y Apellido"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/txtnombrecrear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombreEstudiante"
+        android:hint="Ej: Darius Wonder"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cedula"
+        android:layout_below="@+id/txtnombrecrear"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/cedula"
+        />
+
+    <EditText
+        android:id="@+id/txtcedulacrear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cedula"
+        android:hint="Ej: 36-864-9087"
+        android:textSize="20dp"
+        android:inputType="phone"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Correo"
+        android:layout_below="@+id/txtcedulacrear"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/lblcorreo"
+        />
+
+    <EditText
+        android:id="@+id/txtcorreocrear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblcorreo"
+        android:hint="Ej : hola...@yahoo.com"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/lblcontrasena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgRoles"
+        android:layout_marginTop="10dp"
+        android:text="Contraseña"
+        android:textSize="25dp" />
+    <TextView
+        android:id="@+id/lblRol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtcorreocrear"
+        android:text="Rol"
+        android:textSize="25dp"
+
+        />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/lblRol"
+        android:id="@+id/rgRoles"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/rbAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Administrador"
+            android:textSize="15dp"
+            />
+        <RadioButton
+            android:id="@+id/rbUser"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Usuario Normal"
+            android:textSize="15dp"
+            />
+        <RadioButton
+            android:id="@+id/rbRegis"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Registrador"
+            android:textSize="15dp"
+            />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/txtcontrasenacrear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblcontrasena"
+        android:hint="Introduzca contraseña"
+        android:inputType="textPassword"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btncrear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtcontrasenacrear"
+        android:text="Crear"
+        android:textSize="28dp"
+        android:onClick="EnviarDatosCreados"
+        tools:ignore="OnClick" />
+
+
+
+</RelativeLayout>
+
+</LinearLayout>

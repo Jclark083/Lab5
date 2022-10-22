@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pantalla de Login "
+        android:textSize="32dp"
+        android:textAlignment="center"
+        android:id="@+id/lbltitulo"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:src="@drawable/utplogo"
+        android:layout_below = "@+id/lbltitulo"
+        android:id="@+id/pngutplogo"
+        android:layout_toRightOf="@+id/pngandroid"
+        android:layout_marginLeft="20dp"/>
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:src="@drawable/android"
+        android:layout_below = "@+id/lbltitulo"
+        android:id="@+id/pngandroid"
+        android:layout_toRightOf="@+id/pngutpfisc"
+        android:layout_marginLeft="30dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:src="@drawable/utpfisc"
+        android:layout_below = "@+id/lbltitulo"
+        android:id="@+id/pngutpfisc"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingrese sus Datos "
+        android:textSize="32dp"
+        android:layout_below="@+id/pngutpfisc"
+        android:id="@+id/lbldescripcion"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtusuario"
+        android:layout_below="@+id/lbldescripcion"
+        android:hint="Correo Electronico"
+        android:textSize="25dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtpassword"
+        android:inputType="textPassword"
+        android:layout_below="@+id/txtusuario"
+        android:hint="Contraseña"
+        android:textSize="25dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtpassword"
+        android:text="Ingresar"
+        android:textSize="20dp"
+        android:id="@+id/btningresar"
+        android:onClick="Ingresar"
+        />
+
+
+
+
+
+
+
+</RelativeLayout>
