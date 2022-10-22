@@ -8,11 +8,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RadioButton;
+
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import java.io.OutputStreamWriter;
 //RegisterActivity
 public class CreacionActivity extends AppCompatActivity {
 
@@ -28,11 +27,11 @@ public class CreacionActivity extends AppCompatActivity {
 
     private void IniciarControles(){
 
-        txtnombrecrear = (EditText)findViewById(R.id.txtnombrecrear);
-        txtcedulacrear = (EditText)findViewById(R.id.txtcedulacrear);
-        txtcorreocrear = (EditText)findViewById(R.id.txtcorreocrear);
-        txtcontrasenacrear = (EditText)findViewById(R.id.txtcontrasenacrear);
-        tipologin = (RadioGroup)findViewById(R.id.rgRoles);
+        txtnombrecrear = findViewById(R.id.txtnombrecrear);
+        txtcedulacrear = findViewById(R.id.txtcedulacrear);
+        txtcorreocrear = findViewById(R.id.txtcorreocrear);
+        txtcontrasenacrear = findViewById(R.id.txtcontrasenacrear);
+        tipologin = findViewById(R.id.rgRoles);
 
     }
 
@@ -69,7 +68,7 @@ public class CreacionActivity extends AppCompatActivity {
             Toast.makeText(this, "Usuario Creado Exitosamente", Toast.LENGTH_LONG).show();
 
         }catch (Exception e){
-            Toast.makeText(this, "Ha ocurrido un error" + e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ha ocurrido un error" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
     }
